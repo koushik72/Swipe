@@ -15,12 +15,6 @@ const DATA = [
 ];
 
 export default class App extends React.Component {
-    constructor(props) {
-        super(props);
-        const panResponder = PanResponder.create({});
-        this.state = {panResponder};
-    }
-
     renderCard(item) {
         return <Card key={item.id}
                      title={item.title}
@@ -36,7 +30,6 @@ export default class App extends React.Component {
     }
 
     render() {
-        console.log('is it showing?');
         return (
             <View style={styles.container}>
                 <Deck data={DATA}
