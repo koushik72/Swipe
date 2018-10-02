@@ -29,10 +29,22 @@ export default class App extends React.Component {
         </Card>
     }
 
+    renderNoMoreCard() {
+        return (
+            <Card title="All Done">
+                <Text style={{marginBottom: 10}}>
+                    There're no more cards
+                </Text>
+                <Button title="Get More"/>
+            </Card>
+        )
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 <Deck data={DATA}
+                      renderNoMoreCard={this.renderNoMoreCard}
                       renderCard={this.renderCard}/>
             </View>
         );
